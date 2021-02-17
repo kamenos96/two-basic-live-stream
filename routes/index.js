@@ -19,14 +19,7 @@ router.get('/', (_req, res, next) => {
 })
 
 router.get('/health', (_req, res) => {
-  const response = {
-    statusCode: streamStatus ? 200 : 500,
-    body: {
-      status: streamStatus ? 'online' : 'offline',
-      uptime: streamStatus ? prettyMs(process.uptime()) : undefined
-    }
-  }
-  res.status(response.statusCode).json(response.body)
+  res.status(200).end()
 })
 
 router.use(function (err, _req, res, _next) {
