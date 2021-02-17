@@ -19,7 +19,7 @@ router.get('/', (_req, res, next) => {
 })
 
 router.get('/health', (_req, res) => {
-  res.status(200).end()
+  res.status(200).json({ status: 'ok' })
 })
 
 router.use(function (err, _req, res, _next) {
